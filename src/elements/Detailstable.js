@@ -2,13 +2,14 @@ import Smallcard from "./Smallcard";
 
 const DetailsTable = ({weather}) => {
     return (
-        <div className="weather-card">
-            <div className="weather-preview" id="detail-card">
-                <Smallcard title="Pressure" icon={<img src={require('../images/pressure.png')} alt="0"/>} data={weather.current.pressure_mb+" MB"}/>
-                <Smallcard title="Wind" icon={<img src={require('../images/wind.png')} alt="0"/>} data={weather.current.wind_kph+" km/h"}/>
-                <Smallcard title="Humidity" icon={<img src={require('../images/humidity.png')} alt="0"/>} data={weather.current.humidity+" %"}/>
-                <Smallcard title="Visibility" icon={<img src={require('../images/visibility.png')} alt="0"/>} data={weather.current.vis_km+" km"}/>
-            </div>
+        <div className="detail-row" id="detail-card">
+            <Smallcard title="Pressure" icon={<img className="invert-image" src={require('../images/pressure.png')} alt="0"/>} data={weather.current.pressure_mb+" MB"}/>
+            <div>|</div>
+            <Smallcard title="Wind" icon={<img className="invert-image" src={require('../images/wind.png')} alt="0"/>} data={weather.current.wind_kph+" km/h"}/>
+            <div>|</div>
+            <Smallcard title="Humidity" icon={<img className="invert-image" src={require('../images/humidity.png')} alt="0"/>} data={weather.current.humidity+" %"}/>
+            <div>|</div>
+            <Smallcard title="Visibility" icon={<img className="invert-image" src={require('../images/visibility.png')} alt="0"/>} data={weather.current.vis_km+" km"}/>
         </div>
     );
 }

@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 const useApi = (url) => {
     const [weather, setWeather] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] =useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch(url)
             .then(res => {
                 if(!res.ok){
-                    throw Error('Your request didnt work');
+                    throw Error('Please provide correct location name');
                 }
                 return res.json()
             })
@@ -23,7 +23,6 @@ const useApi = (url) => {
                 setError(error.message);
             })
     }, [url]);
-    console.log(weather);
     return {weather, isLoading, error}
 }
 

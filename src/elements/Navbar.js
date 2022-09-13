@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <h1>The Weatherio</h1>
+            <Link to="/">
+                <h1>Weatherio</h1>
+            </Link>
             <div className="links">
-                <a href="/">Tomorrow</a>
+                <Link to="/">Home</Link>
             </div>
         </nav>
     );

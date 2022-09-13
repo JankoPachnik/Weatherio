@@ -1,31 +1,31 @@
-import { useState} from "react";
-import DetailsTable from "./Detailstable";
 import Headtable from "./Headtable";
 import Forecast from "./Forecast";
+import useApi from "./useApi";
+import { useParams } from "react-router-dom";
 
-const Weatherpage = ({weather}) => {
-    const [tempFormat, setTempFormat] = useState('C');
-    const [tempValue, setTempValue] = useState(weather.current.temp_c);
-
-    const tempFormatChange = () => {
-        if( tempFormat === 'C'){
-            setTempFormat('F');
-            setTempValue(weather.current.temp_f)
-        }else if (tempFormat === 'F'){
-            setTempFormat('C');
-            setTempValue(weather.current.temp_c);
-        }
+const Weatherpage = () => {
+    const apiKey = '3fecf2b7a1d4445f9eb191439221109';
+    const { location } = useParams();
+    const urlBuilder = (location, days) => {
+        return 'http://api.weatherapi.com/v1/forecast.json?key=3fecf2b7a1d4445f9eb191439221109'
+            + '&q=' + location + '&days=' + days + '&aqi=no&alerts=no';
     }
-
-    const getTempFormating = () => {
-        return tempValue +' °' + tempFormat;
-    }
+    const {weather, isLoading, error} = useApi(urlBuilder(location, 5))
 
     return (
-        <div>
-            <Headtable weather={weather} tempFormatChange={tempFormatChange} getTempFormating={getTempFormating} tempFormat={tempFormat}/>
-            <DetailsTable weather={weather}/>
-            <Forecast weather={weather.forecast.forecastday[0]}/>
+        <div className="card-shower">
+            {error && <div>{ error }</div>}
+            {isLoading && <div id="loading-div">Loading... </div>}
+            {weather &&
+                <div>
+                    <Headtable weather={weather}/>
+                    {
+                        weather.forecast.forecastday.map(day =>
+                            <Forecast weather={day}/>
+                        )
+                    }
+                </div>
+            }
         </div>
     );
 }

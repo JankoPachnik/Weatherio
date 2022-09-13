@@ -1,4 +1,5 @@
-const Headtable = ({weather, tempFormatChange, getTempFormating, tempFormat}) => {
+import DetailsTable from "./Detailstable";
+const Headtable = ({weather}) => {
     return (
         <div className="weather-preview">
             <div className="header-card">
@@ -9,14 +10,16 @@ const Headtable = ({weather, tempFormatChange, getTempFormating, tempFormat}) =>
                 <p id="endHeader">{weather.location.country}</p>
                 <div className="lower-preview">
                     <div className="temp-block">
-                        <h1>{getTempFormating()}</h1>
-                        <button id="tempChange" onClick={tempFormatChange}>°{tempFormat}</button>
+                        <h1>{weather.current.temp_c + " °C"}</h1>
                     </div>
                     <div className="data-footer">
                         <p>{weather.location.localtime}</p>
                         <p>Condition: {weather.current.condition.text}</p>
                         <p><img src={require('../images/clouds.png')} alt="0"/> {weather.current.cloud}%</p>
                     </div>
+                </div>
+                <div>
+                    <DetailsTable weather={weather}/>
                 </div>
             </div>
         </div>
