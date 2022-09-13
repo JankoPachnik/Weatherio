@@ -2,13 +2,12 @@
 {
     margin: 0;
     font-family: "Quicksand";
-    color: #333;
 }
+
 #root {
     height: 100vh;
-}
-html, body {
-    height: 100vh;
+    background-color: #474747;
+    color: #aaaaaa;
 }
 .navbar {
     padding: 20px;
@@ -20,7 +19,9 @@ html, body {
 }
 
 .navbar h1 {
-    color: #684be3;
+    font-size: 40px;
+    color: #f1356d;
+    text-shadow: 2px 2px #333333;
 }
 .navbar .links {
     margin-left: auto;
@@ -29,38 +30,55 @@ html, body {
     margin-left: 16px;
     text-decoration: none;
     padding: 6px;
-    color: black;
+    color: #aaaaaa;
 }
 .navbar a:hover {
-    color: #684be3;
+    color: #f1356d;
 }
 .content {
     max-width: 1000px;
     margin: 30px auto;
     padding: 20px;
 }
-
-.weather-card {
-    background-color: #f6f6f6;
+.head-block img{
+    width: 70px;
+    height: 70px;
+}
+.weather-preview {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #302f2f;
     padding: 10px 16px;
     border-width: 1px;
     border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 2px 0 #aaa, 0 2px 2px #444;
+    margin: 20px 0 0 0;
+    box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 5px 0 #444444, 0 5px 0 #474747, 0 5px 5px #000000;
 }
 
-.weather-card h2 {
-    font-size: 25px;
-    color:#684be3;
-    margin: 10px;
+.weather-preview p{
+    margin: 0;
+    font-size: 18px;
+    font-family: Cambria, serif;
+}
+
+.weather-preview h4{
+    color: #f1356d;
+    margin: 0;
 }
 
 .lower-preview img{
+    filter: invert(100%);
     width: 30px;
     height: 30px;
 }
 
-.weather-card #endHeader{
+.weather-preview .header-card h2{
+    font-size: 30px;
+    color: #f1356d;
+    margin: 10px;
+}
+
+.weather-preview #endHeader{
     border-bottom: 1px solid #a9a8ad;
     margin: 0px 10px 10px;
 
@@ -68,26 +86,25 @@ html, body {
 
 .footer {
     border-top: 1px solid #f2f2f2;
-    position: absolute;
     bottom: 0;
-
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
     margin: auto;
     max-width: 1000px;
+    width: 100%;
 }
 
 .footer p{
     margin-left: 16px;
     text-decoration: none;
     padding: 6px;
-    color: #684be3;
+    color: #f1356d;
 }
 
-.weather-card #tempChange {
-    background-color: #40899c;
-    border: 1px solid #40899c;
+.weather-preview #tempChange {
+    background-color: #f1356d;
+    border: 1px solid #f1356d;
     border-radius: 10px;
     color: #fafafa;
     cursor: pointer;
@@ -98,9 +115,9 @@ html, body {
     margin: 15px;
 }
 
-.weather-card #tempChange:hover,
-.weather-card #tempChange:focus {
-    background-color: #55cfed;
+.weather-preview #tempChange:hover,
+.weather-preview #tempChange:focus {
+    background-color: #fa82a6;
 }
 
 .search-box #tempChange:active {
@@ -119,7 +136,7 @@ html, body {
     font-size: 60px;
 }
 
-.headBlock{
+.head-block{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -127,6 +144,38 @@ html, body {
 
 .lower-preview .data-footer{
     margin: 0px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.lower-preview .data-footer p{
+    font-size: 20px;
+}
+
+.weather-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 0 0;
+}
+
+.small-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.small-cards img{
+    filter: invert(100%);
+    width: 30px;
+    height: 30px;
+}
+
+.small-cards p{
+    margin-left: 10px;
+}
+
+#detail-card{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
