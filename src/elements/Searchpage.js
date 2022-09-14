@@ -1,12 +1,11 @@
 import {useState} from "react";
-import {Link, Navigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Searchpage = () => {
     const [location, setLocation] = useState('');
+    const [dayNumber, setDayNumber] = useState(0);
     const handleSubmit = (e) =>{
         e.preventDefault();
-        console.log(location);
-        return <Navigate to={`/results/${location}`}/>
         }
 
     return (
@@ -14,14 +13,21 @@ const Searchpage = () => {
             <form className="search-box" onSubmit={handleSubmit}>
                 <input type="text" id="searchField" placeholder="What City are you interested in?" required
                        onChange={(e) => setLocation(e.target.value)}/>
+                <p>Days ahead:</p>
+                <select value={dayNumber} onChange={(e) => setDayNumber(e.target.value)}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
                 <img src={require('../images/weather_icon.png')} alt="0"/>
-                <Link to={`/results/${location}`}>
+                <Link to={`/results/${location}/${dayNumber}`}>
                     <button type="submit" id="submit">Show Me</button>
                 </Link>
             </form>
-            <div className="panorama-holder">
-                <img id="panorama" src={require('../images/panorama.jpg')} alt="0"/>
-            </div>
         </div>
     );
 }

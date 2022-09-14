@@ -7,6 +7,8 @@
     overflow: hidden;
     padding: 10px;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .search-box #searchField {
@@ -18,9 +20,22 @@
     float: left;
     height: 25px;
     padding: 10px;
-    width: 70%;
+    width: 60%;
     margin-top: 8px;
     margin-left: 2%;
+}
+
+.search-box select {
+    width: 4%;
+    margin: 8px;
+    color: #aaaaaa;
+    background-color: #444444;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px #242323 inset, 0 1px 0 #242323;
+    border: 1px solid #444444;
+    box-sizing: border-box;
+    display: block;
+
 }
 
 .search-box img{
@@ -49,7 +64,8 @@
     height: 40px;
     float: right;
     padding: 5px;
-    width: 20%;
+    width: 100%;
+    margin-left: 7px;
 }
 
 .search-box #submit:hover,
@@ -60,4 +76,8 @@
 .search-box #submit:active {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
     outline: 0;
+}
+
+.search-box p{
+    margin: 8px 0 0 25px;
 }

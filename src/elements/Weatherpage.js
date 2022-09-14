@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom";
 
 const Weatherpage = () => {
     const apiKey = '3fecf2b7a1d4445f9eb191439221109';
-    const { location } = useParams();
+    const { location, days } = useParams();
     const urlBuilder = (location, days) => {
-        return 'http://api.weatherapi.com/v1/forecast.json?key=3fecf2b7a1d4445f9eb191439221109'
+        return 'http://api.weatherapi.com/v1/forecast.json?key='+ apiKey
             + '&q=' + location + '&days=' + days + '&aqi=no&alerts=no';
     }
-    const {weather, isLoading, error} = useApi(urlBuilder(location, 5))
+    const {weather, isLoading, error} = useApi(urlBuilder(location, days))
 
     return (
         <div className="card-shower">

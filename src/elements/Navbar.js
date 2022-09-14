@@ -6,9 +6,6 @@ const Navbar = () => {
             <Link to="/">
                 <h1>Weatherio</h1>
             </Link>
-            <div className="links">
-                <Link to="/">Home</Link>
-            </div>
         </nav>
     );
 }
