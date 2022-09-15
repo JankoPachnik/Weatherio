@@ -1,6 +1,5 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 import moment from "moment";
-import DetailsTable from "./Detailstable";
 import Forecastdetails from "./Forecastdetails";
 const Forecast = ({weather}) => {
     return (

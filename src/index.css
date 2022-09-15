@@ -3,7 +3,7 @@
     margin: 0;
     font-family: "Quicksand";
 }
-html, body, #root, .App {
+html, body, #root, .App{
     height: 100vh;
     background-color: #474747;
 }
@@ -22,7 +22,7 @@ html, body, #root, .App {
 }
 
 .navbar h1 {
-    font-size: 40px;
+    font-size: 50px;
     color: #f1356d;
     text-shadow: 2px 2px #333333;
 }
@@ -145,7 +145,7 @@ html, body, #root, .App {
 }
 
 .lower-preview .data-footer{
-    margin: 0px 10px 10px;
+    margin: 10px 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -206,15 +206,117 @@ html, body, #root, .App {
     height: 40px;
     margin-right: 15px;
 }
-#panorama{
-    height: 350px;
-    width: 1200px;
 
-    border-radius: 10%;
-}
-
-.panorama-holder{
+#status-div{
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+#lower-status{
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#lower-status{
+    font-size: 30px;
+    color: #f1356d;
+    margin-left: 25%;
+}
+
+#offline-Status{
+    color: #c92a2a;
+    margin-left: 10px;
+}
+
+#online-Status{
+    color: #51b340;
+    margin-left: 10px;
+}
+
+#news-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    max-width: 1000px;
+}
+
+.news {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: #302f2f;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+.news:hover {
+    box-shadow: 0 8px 16px 0 rgba(241,53,109,0.5);
+}
+
+.news-text {
+    padding: 2px 16px;
+}
+
+.news img{
+    height: 200px;
+    width: 300px;
+    filter: invert(100%);
+}
+.news h4 {
+    margin-top: 7px;
+    color: #f1356d;
+    font-size: 30px;
+    max-width: 250px;
+}
+.news #text{
+    font-size: 20px;
+    max-width: 250px;
+}
+#author{
+    font-size: 15px;
+    float: right;
+}
+#alert-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+#weather-alert{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    color: #f1356d;
+}
+
+#page-404{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#page-404 img{
+    filter: invert(85%);
+}
+
+#page-404 h2{
+    color: #f1356d;
+    margin: 15px;
+}
+
+.news-text p{
+    color: #aaaaaa;
+}
+
+.article-page h1{
+    color: #f1356d;
+    padding: 10px;
+}
+#location{
+    margin: 15px;
 }

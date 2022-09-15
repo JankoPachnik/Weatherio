@@ -26,7 +26,7 @@
 }
 
 .search-box select {
-    width: 4%;
+    width: 50px;
     margin: 8px;
     color: #aaaaaa;
     background-color: #444444;

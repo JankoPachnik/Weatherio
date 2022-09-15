@@ -1,5 +1,7 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
+import useApi from "./useApi";
+import Newstable from "./Newstable";
 
 const Searchpage = () => {
     const [location, setLocation] = useState('');
@@ -7,6 +9,12 @@ const Searchpage = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         }
+    const apiKey = '3fecf2b7a1d4445f9eb191439221109';
+    const urlBuilder = () => {
+        return 'http://api.weatherapi.com/v1/timezone.json?key='+ apiKey
+            + '&q=' + 'London';
+    }
+    const {error} = useApi(urlBuilder())
 
     return (
         <div className="home">
@@ -28,6 +36,19 @@ const Searchpage = () => {
                     <button type="submit" id="submit">Show Me</button>
                 </Link>
             </form>
+            <div id="alert-header">
+                <div className="weather-preview" id="weather-alert">
+                    <h2>Weather Alerts:</h2>
+                </div>
+                <div id="status-div">
+                    <div className="weather-preview" id="lower-status">
+                        <h2>Status:</h2>
+                        {error && <h2 id="offline-Status">Offline</h2>}
+                        {!error && <h2 id="online-Status">Online</h2>}
+                    </div>
+                </div>
+            </div>
+            <Newstable />
         </div>
     );
 }
