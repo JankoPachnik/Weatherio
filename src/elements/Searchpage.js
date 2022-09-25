@@ -9,7 +9,7 @@ const Searchpage = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         }
-    const apiKey = '3fecf2b7a1d4445f9eb191439221109';
+    const apiKey = 'eb8135b3489d43c8bc6181728222509';
     const urlBuilder = () => {
         return 'http://api.weatherapi.com/v1/timezone.json?key='+ apiKey
             + '&q=' + 'London';
