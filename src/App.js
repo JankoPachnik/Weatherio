@@ -1,10 +1,9 @@
-import Navbar from "./elements/Navbar";
+import Navbar from "./elements/components/Navbar";
 import Searchpage from './elements/Searchpage';
-import Page404 from "./elements/Page404";
+import Page404 from "./elements/components/Page404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Weatherpage from "./elements/Weatherpage";
 import Articlepage from "./elements/Articlepage";
-
 
 function App() {
     return (

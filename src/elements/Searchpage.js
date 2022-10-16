@@ -9,13 +9,19 @@ const Searchpage = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         }
-    const apiKey = 'eb8135b3489d43c8bc6181728222509';
     const urlBuilder = () => {
-        return 'http://api.weatherapi.com/v1/timezone.json?key='+ apiKey
+        return 'https://api.weatherapi.com/v1/timezone.json?key='+ process.env.REACT_APP_API_KEY
             + '&q=' + 'London';
     }
     const {error} = useApi(urlBuilder())
-
+    const numberDaysOption = (days) =>{
+        const keys = [...Array(days).keys()]
+        return(
+            keys.map((item) => (
+                <option value={item+1}>{item+1}</option>
+            ))
+        );
+    }
     return (
         <div className="home">
             <form className="search-box" onSubmit={handleSubmit}>
@@ -23,13 +29,7 @@ const Searchpage = () => {
                        onChange={(e) => setLocation(e.target.value)}/>
                 <p>Days ahead:</p>
                 <select value={dayNumber} onChange={(e) => setDayNumber(e.target.value)}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
+                    {numberDaysOption(7)}
                 </select>
                 <img src={require('../images/weather_icon.png')} alt="0"/>
                 <Link to={`/results/${location}/${dayNumber}`}>

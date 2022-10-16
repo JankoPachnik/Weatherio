@@ -4,10 +4,9 @@ import useApi from "./useApi";
 import { useParams } from "react-router-dom";
 
 const Weatherpage = () => {
-    const apiKey = 'eb8135b3489d43c8bc6181728222509';
     const { location, days } = useParams();
     const urlBuilder = (location, days) => {
-        return 'http://api.weatherapi.com/v1/forecast.json?key='+ apiKey
+        return 'https://api.weatherapi.com/v1/forecast.json?key='+ process.env.REACT_APP_API_KEY
             + '&q=' + location + '&days=' + days + '&aqi=no&alerts=no';
     }
     const {weather, isLoading, error} = useApi(urlBuilder(location, days))

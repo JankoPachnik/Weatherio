@@ -1,6 +1,6 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts';
 import moment from "moment";
-import Forecastdetails from "./Forecastdetails";
+import Forecastdetails from "./components/Forecastdetails";
 const Forecast = ({weather}) => {
     return (
         <div className="weather-card">

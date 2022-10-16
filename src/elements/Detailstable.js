@@ -1,4 +1,4 @@
-import Smallcard from "./Smallcard";
+import Smallcard from "./components/Smallcard";
 
 const DetailsTable = ({weather}) => {
     return (

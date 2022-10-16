@@ -1,4 +1,4 @@
-import Singlenews from "./Singlenews";
+import Singlenews from "./components/Singlenews";
 
 const Newstable = () => {
     const exampleNews = [{title: "Huricane on Pacific", sampletext: "Lorem ipsum dolor sit amet", location: "Los Angeles"},
